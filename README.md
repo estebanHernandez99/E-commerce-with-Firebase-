@@ -1,2 +1,2 @@
 # E-commerce-with-Firebase-
-This is an example project of e-commerce web app made with Firebase which provides features like Realtime Database and Authentication
+This is a test project of an e-commerce web app made with Firebase, which provides features like real-time database and authentication
