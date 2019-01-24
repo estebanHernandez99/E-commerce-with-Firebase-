@@ -1,11 +1,12 @@
 # E-commerce-with-Firebase-
 
-this is an example you can use as reference or model for make your own online e-commerce using services provided by
+This is an example you can use as reference or model for make your own online e-commerce using services provided by
 Firebase as Real-Time Database and Authentication from diferentes providers (google, facebook, github, etc)
 
 Version 1.0
 
- <ul>Features
+<h2>Features</h2>
+ <ul>
    <li>Authentication with email and password</li> 
 
    <li>shows and filter the products by category </li>
@@ -24,8 +25,8 @@ Version 1.0
    
    </ul>
 
-
- <ul>in Development  
+<h2>In Development</h2>
+ <ul>
 
    <li> Details with payments procedures </li>
 
@@ -43,28 +44,30 @@ Version 1.0
 
    <li> add Captcha when the user inserts an invalid password multiple times </li>
 
+   </ul>
+   
+   <h2>Installation</h2>
+<ul>
 
-<ul>Installation 
+   <li>Create a Gmail Account </li> 
 
-    <li>Create a Gmail Account </li> 
+   <li>Go to te main page of Firebae </li>
 
-    <li>Go to te main page of Firebae </li>
-
-    <li>Go to the Firebase Console </li>
+   <li>Go to the Firebase Console </li>
     
-    <li>Create a new project with the name of your preference </li> 
+   <li>Create a new project with the name of your preference </li> 
 
-    <li>add a new application (Web in this case)</li>
+   <li>add a new application (Web in this case)</li>
 
-    <li>in the 'Web configuration' Panel copy the code of the second '<script>' tag</li>
+   <li>in the 'Web configuration' Panel copy the code of the second '<script>' tag</li>
 
-    <li>replace the code of the file 'firebaseConfig.js' in the path 'js/firebaseConfig.js' for the copied code previously 
+   <li>replace the code of the file 'firebaseConfig.js' in the path 'js/firebaseConfig.js' for the copied code previously 
     (this code containes the specific configuration for your project) </li>
 
-    <li>go to the authentication panel and enable authentication by email and password </li>
+   <li>go to the authentication panel and enable authentication by email and password </li>
 
-    <li>go to the database panel and choose the Realtime database </li>
+   <li>go to the database panel and choose the Realtime database </li>
 
-    <li>configure your own security rules for your database in the 'rules' tab </li>
-    
-    </ul>
+   <li>configure your own security rules for your database in the 'rules' tab </li>
+   
+   </ul>
