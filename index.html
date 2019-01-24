@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel='stylesheet' href='https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css'/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+
+<link rel='stylesheet' href='css/style.css'/>
+</head>
+
+<body>
+
+  <!--nav Bar Panel -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" id='home'>Ale´s Shop</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href='index.html'>Home</a></li>
+          <li class='drowpdown'>
+            <a href="#" class='dropdown-toggle' data-toggle='dropdown'>Categories <span class='caret'></span></a>
+            <ul class='dropdown-menu '>
+              <li><a href='index.html?c=tablets'>Tablets</a></li>
+              <li><a href='index.html?c=phones'>Phones</a></li>
+              <li><a href='index.html?c=laptops'>Laptops</a></li>
+              <li><a href='index.html?c=gaming'>Gaming</a></li>
+              <li><a href='index.html?c=cameras'>Cameras</a></li>
+            </ul>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="dropdown">
+            <a href='#' id='user_info' class='dropdown-toggle' data-toggle="dropdown" >Hello, Sign in <span class="caret"></a>
+              <ul class="dropdown-menu ">
+
+                <li id='settings'><a href="#" style='text-align:center'>Settings</a></li>
+                <li id='logout'><a href="#" style='text-align:center'>Logout <span class='glyphicon glyphicon-log-out'></span></a></li>
+                <li id='login'><a href='auth.html?auth=login' style='text-align:center'>Login <span class='glyphicon glyphicon-log-in'></span></a></li>
+                <li id='signUp'><a href='auth.html?auth=signup' style='text-align:center'>Sign Up <span class='glyphicon glyphicon-user'></span></a></li>
+
+              </ul>
+            </li>
+            <li><a href='cart.html'>Cart <span class='glyphicon glyphicon-shopping-cart'></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- Store Body  -->
+  <div class='container-fluid' id='store_body' style='padding:0;'>
+
+<div class='container-fluid padding-2' id='products'>
+
+</div>
+
+<div class='container-fluid padding-2' id='tablets'>
+
+
+</div>
+
+<div class='container-fluid padding-2' id='phones'>
+
+
+</div>
+
+<div class='container-fluid padding-2' id='laptops'>
+
+
+</div>
+
+<div class='container-fluid padding-2' id='gaming'>
+
+
+</div>
+
+<div class='container-fluid padding-2' id='cameras'>
+
+
+</div>
+
+<div class='container-fluid text-center padding-1 footer'>
+  <h4>Made By Alejandro Hernandez</h4>
+</div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script src='js/firebaseConfig.js'></script>
+  <script src='js/database.js'></script>
+  <script src='js/userInfo.js'></script>
+  <script src='js/URLparams.js'></script>
+  <script src='js/shopItems.js'></script>
+  <script>
+  if(c != null){
+  showShopItems(databaseRef, products, filter = {
+    byChild:true,
+    child:'category',
+    equalTo:c
+  });
+
+  document.getElementById('products').style = 'display:block';
+}
+
+if(c == null){
+document.getElementById('products').style = 'display:none';
+
+const tablets = document.getElementById('tablets');
+showShopItemsMain(databaseRef, tablets, filter = {
+  byChild:true,
+  child:'category',
+  equalTo:'tablets',
+  limitToFirst:{limit:4},
+}, 'tablets');
+
+const phones = document.getElementById('phones');
+showShopItemsMain(databaseRef, phones, filter = {
+  byChild:true,
+  child:'category',
+  equalTo:'phones',
+  limitToFirst:{limit:4},
+}, 'phones');
+
+
+const laptops = document.getElementById('laptops');
+showShopItemsMain(databaseRef, laptops, filter = {
+  byChild:true,
+  child:'category',
+  equalTo:'laptops',
+  limitToFirst:{limit:4},
+}, 'laptops');
+
+const gaming = document.getElementById('gaming');
+showShopItemsMain(databaseRef, gaming, filter = {
+  byChild:true,
+  child:'category',
+  equalTo:'gaming',
+  limitToFirst:{limit:4},
+}, 'gaming');
+
+const cameras = document.getElementById('cameras');
+showShopItemsMain(databaseRef, cameras, filter = {
+  byChild:true,
+  child:'category',
+  equalTo:'cameras',
+  limitToFirst:{limit:4},
+}, 'cameras');
+
+}else {
+  tablets.style = 'display:none';
+  phones.style = 'display:none';
+  laptops.style = 'display:none';
+  gaming.style = 'display:none';
+  cameras.style  ='display:none';
+}
+  </script>
+
+</body>
+</html>

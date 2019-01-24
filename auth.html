@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel='stylesheet' href='https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css'/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+
+<link rel='stylesheet' href='css/style.css'/>
+</head>
+
+<body>
+
+  <div class='container-fluid padding-2 bg-2 specific-height smooth-bg' id='credential'>
+<a href='index.html' style='text-decoration:none; color:white;'><h2 class='text-center'>ALe's Shop</h2></a>
+    <!--login Panel -->
+    <div class='panel panel-default login' id='loginPanel'>
+      <h2 class='text-center'>Login</h2>
+      <form>
+        <div class='form-group'>
+          <label for='email'>Email</label>
+
+        <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="emailL" type="text" class="form-control" name="email" placeholder="Email">
+  </div>
+</div>
+<div class='form-group'>
+  <label for='password'>Password</label>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="passwordL" type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+</div>
+
+<div class='form-group'>
+  <div class="input-group">
+    <input type='button' id='submitL' class='btn btn-success' value='Login'/>
+  </div>
+</div>
+      </form>
+      <div id='errorHandlerL'></div>
+      <div id='linkSignUp' class='accessPanel'><a href='#'>Sign Up</a></div>
+    </div>
+
+<!--Sign Up Panel -->
+    <div class='panel panel-default login' id='signUpPanel'>
+      <h2 class='text-center'>Sign Up</h2>
+      <form>
+        <div class='form-group'>
+          <label for='email'>Email</label>
+
+        <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="emailS" type="text" class="form-control" name="email" placeholder="Email">
+  </div>
+</div>
+<div class='form-group'>
+  <label for='password'>Password</label>
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input id="passwordS" type="password" class="form-control" name="password" placeholder="Password">
+  </div>
+</div>
+
+<div class='form-group'>
+  <label for='confirmP'>Confirm Password</label>
+
+  <div class='input-group'>
+    <span class='input-group-addon'><i class='glyphicon glyphicon-lock'></i></span>
+    <input id='cPasswordS' type='password' class='form-control' name='confirmP' placeholder='Confirm Password'>
+  </div>
+</div>
+<div class='form-group'>
+  <div class="input-group">
+    <input type='button' id='submitS' class='btn btn-warning' value='Sign Up'/>
+  </div>
+</div>
+      </form>
+      <div id='errorHandlerS'></div>
+      <div id='linkLogin' class='accessPanel'><a href='#'>Login</a></div>
+    </div>
+  </div>
+
+  <div class='container-fluid text-center padding-1 footer'>
+    <h4>Made By Alejandro Hernandez</h4>
+  </div>
+
+  <div id='loading-panel'>
+    <div class='loader'>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+  <script src='js/firebaseConfig.js'></script>
+  <script src='js/URLparams.js'></script>
+  <script>
+  if(auth !=null){
+    if(auth == 'login'){
+      loginPanel.style = 'display:block';
+      signUpPanel.style = 'display:none';
+    }else if(auth == 'signup'){
+      loginPanel.style = 'display:none';
+      signUpPanel.style = 'display:block';
+    }
+  }
+  </script>
+  <script src='js/database.js'></script>
+  <script src='js/auth.js'></script>
+</body>
+</html>
